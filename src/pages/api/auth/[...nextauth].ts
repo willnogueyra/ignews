@@ -11,3 +11,12 @@ export default NextAuth({
     }),
   ],
 })
+
+/* 
+  Next usa back-end serveless -> não fica 24hrs conectado ao servidor sendo assim,
+  faz varias conexões se for autenticada.
+
+  FaunaDB -> melhor opção para db com serverless nextjs
+
+  dynamoDB, mongoDB -> fica conectado 24hrs com servidor sendo assim mantém conexao uma unica vez
+*/
