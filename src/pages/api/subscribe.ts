@@ -12,6 +12,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => { // request
       //metadata
     })
 
+    // campo de inscrição de pagamento
     const stripeCheckoutSession = await stripe.checkout.sessions.create({
       customer: stripeCustomer.id,
       payment_method_types: ['card'],
