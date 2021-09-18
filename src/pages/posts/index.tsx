@@ -32,17 +32,6 @@ export default function Posts({ posts }: PostsProps) {
               <p>{post.excerpt}</p>
             </a>
           ))}
-          
-          <a href="">
-            <time>12 de msdad</time>
-            <strong> Titulo do post</strong>
-            <p> texto do post</p>
-          </a>
-          <a href="">
-            <time>12 de msdad</time>
-            <strong> Titulo do post</strong>
-            <p> texto do post</p>
-          </a>
         </div>
       </main>
     </>
