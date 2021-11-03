@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react" // renderiza um componente virtual
+import { render, screen } from "@testing-library/react" // renderiza um componente virtual
 import { ActiveLink } from "."
 
 /* como o test unitario é desconexo de todo resto do contexto da aplicação, não retorna nada
@@ -29,16 +29,15 @@ describe("ActiveLink component", () => {
   })
 
   //verifica se está com classe active
+  //forma mais usando screen (lembrar de importar)
   test('active link is receiving active class', () => {
-    const { getByText , debug } = render(
+     render(
       <ActiveLink href="/" activeClassName="active">
         <a>Home</a>
       </ActiveLink>
     )
-
-    debug() // como se fosse um console.log que mostra o que virtualizou no console do vscode
     
-    expect(getByText('Home')).toHaveClass('active') // espera um texto Home que tenha classe active
+    expect(screen.getByText('Home')).toHaveClass('active') // espera um texto Home que tenha classe active
   })
 })
 
