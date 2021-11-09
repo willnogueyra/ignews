@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react" // renderiza um componente virtual
+import { render, screen } from "@testing-library/react" // renderiza um componente virtual
 import { Header } from "."
 
 /* como o test unitario é desconexo de todo resto do contexto da aplicação, não retorna nada
@@ -29,6 +29,8 @@ describe("Header component", () => {
       <Header />
     )
     
+    //screen.logTestingPlaygroundURL();
+
     expect(getByText('Home')).toBeInTheDocument() // espera um texto Home que esteja no documento
     expect(getByText('Posts')).toBeInTheDocument()
   })
