@@ -6,7 +6,7 @@ import styles from "../post.module.scss";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link"
 import { useEffect } from "react";
-import router from "next/router";
+import { useRouter } from "next/router";
 
 interface PostPreviewProps {
   post: {
@@ -19,6 +19,7 @@ interface PostPreviewProps {
 
 export default function PostPreview({ post }: PostPreviewProps) {
   const [session] = useSession();
+  const router = useRouter();
 
   useEffect(() =>{
     if (session?.activeSubscription) {
