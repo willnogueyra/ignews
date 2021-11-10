@@ -34,7 +34,7 @@ describe("Post page", () => {
     expect(response).toEqual(
       expect.objectContaining({
         redirect: expect.objectContaining({
-          destination: '/',
+          destination: '/posts/preview/my-new-post',
         })
       })
     )
@@ -43,6 +43,7 @@ describe("Post page", () => {
   it('loads initial data', async () => {
     const getSessionMocked = mocked(getSession)
     const getPrismicClientMocked = mocked(getPrismicClient)
+
     getPrismicClientMocked.mockReturnValueOnce({
       getByUID: jest.fn().mockResolvedValueOnce({
         data: {
