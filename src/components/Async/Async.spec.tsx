@@ -12,11 +12,14 @@ test('it renders correctly', async () => {
 
   expect(screen.getByText('Hello world')).toBeInTheDocument();
 
+  await waitForElementToBeRemoved(screen.queryByText('Juliana'))
+
   waitFor(() => (
     expect(screen.findByText('Maria')).toBeInTheDocument()
   ));
 
-  await waitForElementToBeRemoved(screen.queryByText('Juliana'))
+  
+  
 });
 
 /* o teste nao espera o tempo de renderização de componente com setTimeout no button por exemplo, 
